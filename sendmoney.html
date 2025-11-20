@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Enviar dinero - FinanPlus</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-credit-card"></i> FinanPlus</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="menu.html"><i class="fas fa-home"></i> Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="deposit.html"><i class="fas fa-arrow-down"></i> Depositar</a></li>
+          <li class="nav-item"><a class="nav-link" href="sendmoney.html"><i class="fas fa-paper-plane"></i> Enviar</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html"><i class="fas fa-list"></i> Movimientos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <div class="container mt-5">
+      <div class="card p-4">
+        <h2 class="text-center mb-4"><i class="fas fa-paper-plane"></i> Enviar dinero</h2>
+
+        <!-- Mostrar saldo disponible -->
+        <div class="alert alert-info text-center">
+          <strong>Saldo disponible:</strong> <span id="saldoDisponible">$0</span>
+        </div>
+
+        <!-- Botón para mostrar formulario -->
+        <button id="btnMostrarFormulario" onclick="mostrarFormularioContacto()" class="btn btn-info mb-3">
+          <i class="fas fa-user-plus"></i> Agregar nuevo contacto
+        </button>
+
+        <!-- Formulario emergente -->
+        <div id="formContacto" style="display:none;" class="border p-3 mb-3 rounded bg-light">
+          <h5><i class="fas fa-address-card"></i> Nuevo contacto</h5>
+          <input type="text" id="nombreContacto" class="form-control mb-2" placeholder="Nombre y apellido" required>
+          <input type="text" id="cbu" class="form-control mb-2" placeholder="RUT" required>
+          <input type="text" id="alias" class="form-control mb-2" placeholder="Alias" required>
+          <input type="text" id="banco" class="form-control mb-2" placeholder="Banco" required>
+          <button onclick="guardarContacto()" class="btn btn-success btn-block mb-2">
+            <i class="fas fa-save"></i> Guardar contacto
+          </button>
+          <button onclick="$('#formContacto').slideUp()" class="btn btn-secondary btn-block">
+            <i class="fas fa-times"></i> Cancelar
+          </button>
+        </div>
+
+        <!-- Búsqueda y selección -->
+        <label for="busquedaContacto" class="font-weight-bold">
+          <i class="fas fa-search"></i> Buscar contacto:
+        </label>
+        <input type="text" id="busquedaContacto" class="form-control mb-3" placeholder="Buscar por nombre o alias">
+        
+        <label for="listaContactos" class="font-weight-bold">
+          <i class="fas fa-user"></i> Seleccionar destinatario:
+        </label>
+        <select id="listaContactos" class="form-control form-control-lg mb-3" size="3">
+          <option value="">-- Selecciona un contacto --</option>
+        </select>
+
+        <!-- Información del contacto seleccionado -->
+        <div id="infoContacto" style="display:none;" class="alert alert-secondary mb-3">
+          <h6><i class="fas fa-info-circle"></i> Datos del destinatario:</h6>
+          <p class="mb-1"><strong>Nombre:</strong> <span id="contactoNombre"></span></p>
+          <p class="mb-1"><strong>RUT:</strong> <span id="contactoCbu"></span></p>
+          <p class="mb-1"><strong>Banco:</strong> <span id="contactoBanco"></span></p>
+        </div>
+
+        <!-- Envío de dinero -->
+        <label for="montoEnvio" class="font-weight-bold">
+          <i class="fas fa-dollar-sign"></i> Monto a enviar:
+        </label>
+        <input type="number" id="montoEnvio" class="form-control mb-3" placeholder="Ingresa el monto" min="1">
+        
+        <button id="btnEnviarDinero" onclick="enviarDinero()" class="btn btn-success btn-lg btn-block">
+          <i class="fas fa-paper-plane"></i> Enviar dinero
+        </button>
+        
+        <!-- Contenedor de alertas -->
+        <div id="alert-container" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="footer bg-white text-dark text-center mt-5 py-3 rounded shadow">
+    <p class="mb-1">&copy; 2025 <strong>FinanPlus S.A.</strong> Todos los derechos reservados.</p>
+    <small class="text-muted">Contacto: soporte@finanplus.cl | +56 9 1234 5678</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

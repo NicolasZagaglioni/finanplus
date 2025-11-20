@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Movimientos - FinanPlus</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-credit-card"></i> FinanPlus</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="menu.html"><i class="fas fa-home"></i> Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="deposit.html"><i class="fas fa-arrow-down"></i> Depositar</a></li>
+          <li class="nav-item"><a class="nav-link" href="sendmoney.html"><i class="fas fa-paper-plane"></i> Enviar</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html"><i class="fas fa-list"></i> Movimientos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <div class="container mt-5">
+      <div class="card p-4">
+        <h2 class="text-center mb-4"><i class="fas fa-list"></i> Movimientos recientes</h2>
+
+        <!-- Filtro por tipo con botones -->
+        <div class="btn-group btn-group-toggle mb-4 w-100" data-toggle="buttons">
+          <label class="btn btn-outline-primary active filtro-btn">
+            <input type="radio" name="filtro" value="todos" checked> 
+            <i class="fas fa-list"></i> Todos
+          </label>
+          <label class="btn btn-outline-success filtro-btn">
+            <input type="radio" name="filtro" value="depósito"> 
+            <i class="fas fa-arrow-down"></i> Depósitos
+          </label>
+          <label class="btn btn-outline-danger filtro-btn">
+            <input type="radio" name="filtro" value="transferencia"> 
+            <i class="fas fa-paper-plane"></i> Transferencias
+          </label>
+        </div>
+
+        <!-- Resumen -->
+        <div id="resumenMovimientos" class="alert alert-info text-center mb-3">
+          <strong>Total de movimientos:</strong> <span id="totalMovimientos">0</span>
+        </div>
+
+        <!-- Lista dinámica -->
+        <ul id="listaMovimientos" class="list-group"></ul>
+        
+        <!-- Mensaje si no hay movimientos -->
+        <div id="sinMovimientos" style="display:none;" class="text-center mt-4">
+          <i class="fas fa-inbox fa-3x text-muted mb-3"></i>
+          <p class="text-muted">No hay movimientos registrados</p>
+          <a href="deposit.html" class="btn btn-primary mt-2">
+            <i class="fas fa-arrow-down"></i> Realizar primer depósito
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="footer bg-white text-dark text-center mt-5 py-3 rounded shadow">
+    <p class="mb-1">&copy; 2025 <strong>FinanPlus S.A.</strong> Todos los derechos reservados.</p>
+    <small class="text-muted">Contacto: soporte@finanplus.cl | +56 9 1234 5678</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>

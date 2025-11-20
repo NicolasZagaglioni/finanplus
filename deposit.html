@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Depositar - FinanPlus</title>
+  <link rel="icon" type="image/x-icon" href="./favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm">
+    <div class="container">
+      <a class="navbar-brand" href="index.html"><i class="fas fa-credit-card"></i> FinanPlus</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="menu.html"><i class="fas fa-home"></i> Menú</a></li>
+          <li class="nav-item"><a class="nav-link" href="deposit.html"><i class="fas fa-arrow-down"></i> Depositar</a></li>
+          <li class="nav-item"><a class="nav-link" href="sendmoney.html"><i class="fas fa-paper-plane"></i> Enviar</a></li>
+          <li class="nav-item"><a class="nav-link" href="transactions.html"><i class="fas fa-list"></i> Movimientos</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <div class="container mt-5">
+      <div class="card p-4">
+        <h2 class="text-center mb-4"><i class="fas fa-arrow-down"></i> Depositar dinero</h2>
+        <p id="saldoActual" class="mb-3 font-weight-bold text-center"></p>
+        <div id="alert-container"></div>
+        <input type="number" id="monto" class="form-control mb-3" placeholder="Monto a depositar" min="1">
+        <button onclick="depositar()" class="btn btn-gradient btn-lg btn-block">Realizar depósito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pie de página -->
+  <footer class="footer bg-white text-dark text-center mt-5 py-3 rounded shadow">
+    <p class="mb-1">&copy; 2025 <strong>FinanPlus S.A.</strong> Todos los derechos reservados.</p>
+    <small class="text-muted">Contacto: soporte@finanplus.cl | +56 9 1234 5678</small>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
